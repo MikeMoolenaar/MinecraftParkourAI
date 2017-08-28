@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Mission xmlns="http://ProjectMalmo.microsoft.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <About>
+    <Summary>sup!</Summary>
+  </About>
+  <ServerSection>
+    <ServerInitialConditions>
+      <Time>
+        <!-- 
+          0 = dawn
+          6000 = noon
+          18000 = midnight
+            -->
+        <StartTime>6000</StartTime>
+        <AllowPassageOfTime>false</AllowPassageOfTime>
+      </Time>
+    </ServerInitialConditions>
+    <ServerHandlers>
+      <FileWorldGenerator src="C:\\Malmo-0.30.0-Windows-64bit\\Minecraft\\run\\saves\\Flatland"/>
+    </ServerHandlers>
+  </ServerSection>
+
+  <AgentSection mode="Survival">
+    <Name>Bot</Name>
+    <AgentStart>
+      <Placement x="418.5" y="6" z="-1162.5" yaw="270"/>
+      <!--<Inventory>
+          Inventory items
+      </Inventory> -->
+    </AgentStart>
+    <AgentHandlers>
+      <AbsoluteMovementCommands />
+      <ChatCommands />
+      <ObservationFromFullStats/>
+      <ObservationFromRay />
+      <ObservationFromChat />
+      <ObservationFromFullInventory/>
+      <ObservationFromNearbyEntities>
+        <Range name="entities" xrange="20" yrange="4" zrange="20"/>
+      </ObservationFromNearbyEntities>
+      <ContinuousMovementCommands turnSpeedDegs="420"/>
+      <AgentQuitFromTouchingBlockType>
+        <Block type="diamond_block" />
+      </AgentQuitFromTouchingBlockType>
+      <ContinuousMovementCommands turnSpeedDegs="180"/>
+    </AgentHandlers>
+  </AgentSection>
+</Mission>
